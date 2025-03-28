@@ -2,8 +2,6 @@ package Actividades;
 import java.util.ArrayList;
 import  java.util.Iterator;
 
-import javax.management.RuntimeErrorException;
-
 public class Bolsa < T > implements Iterable < T >{
     private ArrayList < T > lista = new ArrayList< T >();
     private int tope;
@@ -18,7 +16,10 @@ public class Bolsa < T > implements Iterable < T >{
             lista.add(objeto);
         }
         else{
-            throw new RuntimeErrorException("no caben mas");
+            throw new RuntimeException("no caben mas");
         }
+    }
+    public Iterator < T > iterator (){
+        return lista.iterator();
     }
 }
