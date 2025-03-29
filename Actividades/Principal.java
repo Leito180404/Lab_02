@@ -8,5 +8,6 @@ public class Principal {
         Chocolatina c2 = new Chocolatina("Ferrero");
         BolsaCho.add(c);
         BolsaCho.add(c1);
+        BolsaCho.add(c2);
     }
 }
