@@ -8,4 +8,18 @@ public class Golosina {
         this.nombre = nombre;
         this.peso = peso;
     }
+
+    public String getNombre(){
+        return this.nombre;
+    }
+    public  void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public double getPeso(){
+        return this.peso;
+    }
+    public void setPeso(double peso){
+        this.peso = peso;
+    }
+
 }
