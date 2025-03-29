@@ -9,5 +9,6 @@ public class Principal {
         BolsaCho.add(c);
         BolsaCho.add(c1);
         BolsaCho.add(c2);
+        
     }
 }
