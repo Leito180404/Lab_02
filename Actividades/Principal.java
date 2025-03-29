@@ -14,7 +14,16 @@ public class Principal {
         }
 
         Bolsa<Golosina> bolsaGo = new Bolsa<Golosina> (3);
-        Golosina g = new Golosina("caramelo", 1)
-        Golosina g1
+        Golosina g = new Golosina("caramelo", 1);
+        Golosina g1 = new Golosina("Chicle", 1.2);
+        Golosina g2 = new Golosina("Chupetin", 2);
+
+        bolsaGo.add(g);
+        bolsaGo.add(g1);
+        bolsaGo.add(g2);
+        System.out.println("En la bolsa de golosinas hay: ");
+        for (Golosina j: bolsaGo){
+            System.out.println("Golosina: " + j.getNombre() + "peso: " + j.getPeso());
+        }
     }
 }
