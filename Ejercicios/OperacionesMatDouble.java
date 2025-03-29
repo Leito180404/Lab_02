@@ -27,5 +27,11 @@ public class OperacionesMatDouble implements Operable<Double>{
         return valor / otro;
     }
 
-    
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
 }
