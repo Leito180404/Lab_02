@@ -11,4 +11,24 @@ public class OperacionesMatDouble implements Operable<Double>{
     public Double suma(Double otro){
         return valor + otro;
     }
+
+    @Override
+    public Double suma(Double otro){
+        return valor + otro;
+    }
+
+    @Override
+    public Double suma(Double otro){
+        return valor + otro;
+    }
+
+    @Override
+    public Double suma(Double otro){
+        return valor + otro;
+    }
+
+    @Override
+    public Double suma(Double otro){
+        return valor + otro;
+    }
 }
