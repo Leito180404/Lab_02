@@ -12,42 +12,48 @@ public interface Operable<E> {
 
 }
 
-class NumeroOperable implements Operable<NumeroOperable> {
-    private double valor;
+class OperacionesMatInteger implements Operable<Integer> {
 
-    public NumeroOperable(double valor) {
+    private Integer valor;
+
+    public OperacionesMatInteger(Integer valor) {
         this.valor = valor;
     }
 
     @Override
-    public NumeroOperable suma(NumeroOperable otro) {
-        return new NumeroOperable(this.valor + otro.valor);
+    public Integer suma(Integer otro) {
+        return this.valor + otro;
     }
 
     @Override
-    public NumeroOperable resta(NumeroOperable otro) {
-        return new NumeroOperable(this.valor - otro.valor);
+    public Integer resta(Integer otro) {
+        return this.valor - otro;
     }
 
     @Override
-    public NumeroOperable producto(NumeroOperable otro) {
-        return new NumeroOperable(this.valor * otro.valor);
+    public Integer producto(Integer otro) {
+        return this.valor * otro;
     }
 
     @Override
-    public NumeroOperable division(NumeroOperable otro) {
-        if(otro.valor == 0){
-            throw new ArithmeticException("No se puede dividir por cero un numero");
+    public Integer division(Integer otro) {
+        if (otro == 0) {
+            throw new ArithmeticException("No se puede dividir por cero");
         }
-        return new NumeroOperable(this.valor / otro.valor);
+        return this.valor / otro;
     }
 
-    public double getValor() {
+    public Integer getValor() {
         return valor;
     }
 
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
+
     @Override
-    public String toString(){
-        return "NumeroOperable: [valor=" + valor + "]";
+    public String toString() {
+        return "OperacionesMatInteger: [valor=" + valor + "]";
     }
 }
+

@@ -34,4 +34,9 @@ public class OperacionesMatDouble implements Operable<Double>{
     public void setValor(Double valor) {
         this.valor = valor;
     }
+
+    @Override
+    public String toString() {
+        return "OperacionesMatDouble [valor=" + valor + "]";
+    }
 }

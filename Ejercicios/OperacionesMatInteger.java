@@ -26,7 +26,7 @@ public class OperacionesMatInteger implements Operable<Integer> {
     @Override
     public Integer division(Integer otro) {
         if (otro == 0) {
-            throw new ArithmeticException("No se puede");
+            throw new ArithmeticException("No se puede dividir por cero");
         }
         return valor / otro;
     }
@@ -44,4 +44,3 @@ public class OperacionesMatInteger implements Operable<Integer> {
         return "OperacionesMatInteger [valor=" + valor + "]";
     }
 }
-
