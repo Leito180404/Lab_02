@@ -12,13 +12,14 @@ public class Bolsa < T > implements Iterable < T >{
     }
 
     public void add(T objeto){
-        if(lista.size() >= tope){
+        if(lista.size() <= tope){
             lista.add(objeto);
         }
         else{
             throw new RuntimeException("no caben mas");
         }
     }
+    @Override
     public Iterator < T > iterator (){
         return lista.iterator();
     }
