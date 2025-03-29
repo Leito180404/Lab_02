@@ -12,5 +12,9 @@ public class Principal {
         for(Chocolatina i : BolsaCho){
             System.out.println("Chocolate: " + i.getMarca());
         }
+
+        Bolsa<Golosina> bolsaGo = new Bolsa<Golosina> (3);
+        Golosina g = new Golosina("caramelo", 1)
+        Golosina g1
     }
 }
