@@ -1,54 +1,53 @@
 package Ejercicios;
 
-public class Operable <T extends Number> {
+public interface Operable<E> {
 
-    private T num1;
-    private T num2;
+    E suma(E otro);
 
-    //construtor
-    public Operable(T num1, T num2) {
-        this.num1 = num1;
-        this.num2 = num2;
+    E resta(E otro);
+
+    E producto(E otro);
+
+    E division(E otro);
+
+}
+
+class NumeroOperable implements Operable<NumeroOperable> {
+    private double valor;
+
+    public NumeroOperable(double valor) {
+        this.valor = valor;
     }
 
-    public double suma() {
-        return num1.doubleValue() + num2.doubleValue();
+    @Override
+    public NumeroOperable suma(NumeroOperable otro) {
+        return new NumeroOperable(this.valor + otro.valor);
     }
 
-    public double resta() {
-        return num1.doubleValue() - num2.doubleValue();
+    @Override
+    public NumeroOperable resta(NumeroOperable otro) {
+        return new NumeroOperable(this.valor - otro.valor);
     }
 
-    public double producto() {
-        return num1.doubleValue() * num2.doubleValue();
+    @Override
+    public NumeroOperable producto(NumeroOperable otro) {
+        return new NumeroOperable(this.valor * otro.valor);
     }
 
-    public double division() {
-        if(num2.doubleValue() == 0){
-            throw new ArithmeticException("No se puede dividir entre 0 algun valor");
+    @Override
+    public NumeroOperable division(NumeroOperable otro) {
+        if(otro.valor == 0){
+            throw new ArithmeticException("No se puede dividir por cero un numero");
         }
-        return num1.doubleValue() / num2.doubleValue();
+        return new NumeroOperable(this.valor / otro.valor);
     }
 
-    public T getNum1() {
-        return num1;
-    }
-
-    public T getNum2() {
-        return num2;
-    }
-
-    public void setNum1(T num1) {
-        this.num1 = num1;
-    }
-
-    public void setNum2(T num2) {
-        this.num2 = num2;
+    public double getValor() {
+        return valor;
     }
 
     @Override
     public String toString(){
-        return "Operable: [num1="+ num1 +", num2="+ num2 +"]";
+        return "NumeroOperable: [valor=" + valor + "]";
     }
-
 }
