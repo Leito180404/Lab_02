@@ -1,37 +1,43 @@
 package Ejercicios;
 
-public class OperacionesMatDouble implements Operable<Double>{
-    private Double valor;
+public class OperacionesMatDouble<E extends Number> implements Operable<E> {
 
-    public OperacionesMatDouble(Double valor){
+    private E valor;
+    private Class<E> type;
+
+    public OperacionesMatDouble(E valor, Class<E> type) {
         this.valor = valor;
+        this.type = type;
     }
 
     @Override
-    public Double suma(Double otro){
-        return valor + otro;
+    public E suma(E otro) {
+        return type.cast(Double.valueOf(valor.doubleValue() + otro.doubleValue()));
     }
 
     @Override
-    public Double resta(Double otro){
-        return valor - otro;
+    public E resta(E otro) {
+        return type.cast(Double.valueOf(valor.doubleValue() - otro.doubleValue()));
     }
 
     @Override
-    public Double producto(Double otro){
-        return valor * otro;
+    public E producto(E otro) {
+        return type.cast(Double.valueOf(valor.doubleValue() * otro.doubleValue()));
     }
 
     @Override
-    public Double division(Double otro){
-        return valor / otro;
+    public E division(E otro) {
+        if (otro.doubleValue() == 0) {
+            throw new ArithmeticException("No se puede dividir por cero");
+        }
+        return type.cast(Double.valueOf(valor.doubleValue() / otro.doubleValue()));
     }
 
-    public Double getValor() {
+    public E getValor() {
         return valor;
     }
 
-    public void setValor(Double valor) {
+    public void setValor(E valor) {
         this.valor = valor;
     }
 
