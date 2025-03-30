@@ -25,7 +25,7 @@ class DemoMetodoGenerico {
         if (igualArrays(nums,nums4))
             System.out.println("nums es igual a nums4");
 
-        Double dvals[]={1.1,2.2,3.3,4.4,5.5};
+        //Double dvals[]={1.1,2.2,3.3,4.4,5.5};
     //if(igualArrays(nums,dvals)) 
     //System.out.println("nums es igual a dvals");
     }

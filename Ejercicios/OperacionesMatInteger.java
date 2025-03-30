@@ -1,37 +1,47 @@
 package Ejercicios;
 
+public class OperacionesMatInteger implements Operable<Integer> {
 
-public class OperacionesMatInteger<E extends Number> implements Operable<E> {
+    private Integer valor;
 
-    private E valor;
-    private Class<E> type;
-
-    public OperacionesMatInteger(E valor, Class<E> type) {
+    public OperacionesMatInteger(Integer valor) {
         this.valor = valor;
-        this.type = type;
     }
 
     @Override
-    public E suma(E otro) {
-        return type.cast(Integer.valueOf(valor.intValue() + otro.intValue()));
+    public Integer suma(Integer otro) {
+        return valor + otro;
     }
 
     @Override
-    public E resta(E otro) {
-        return type.cast(Integer.valueOf(valor.intValue() - otro.intValue()));
+    public Integer resta(Integer otro) {
+        return valor - otro;
     }
 
     @Override
-    public E producto(E otro) {
-        return type.cast(Integer.valueOf(valor.intValue() * otro.intValue()));
+    public Integer producto(Integer otro) {
+        return valor * otro;
     }
 
     @Override
-    public E division(E otro) {
-        if (otro.intValue() == 0) {
+    public Integer division(Integer otro) {
+        if (otro == 0) {
             throw new ArithmeticException("No se puede dividir por cero");
         }
-        return type.cast(Integer.valueOf(valor.intValue() / otro.intValue()));
+        return valor / otro;
+    }
+
+    public Integer getValor() {
+        return valor;
+    }
+
+    public void setValor(Integer valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        return "OperacionesMatInteger [valor=" + valor + "]";
     }
 }
 
