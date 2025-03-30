@@ -3,56 +3,86 @@ package Ejercicios;
 import java.util.Scanner;
 
 public class Principal {
+
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
+        int opcion;
+        
+        do {
+            System.out.println("Menú de Operaciones Clases Genéricas:");
+            System.out.println("1. Suma");
+            System.out.println("2. Resta");
+            System.out.println("3. Producto");
+            System.out.println("4. División");
+            System.out.println("5. Potencia");
+            System.out.println("6. Raíz Cuadrada");
+            System.out.println("7. Raíz Cúbica");
+            System.out.println("8. Salir");
+            opcion = sc.nextInt();
 
-        System.out.println("Seleccione el tipo de operacion:");
-        System.out.println("1. Enteros");
-        System.out.println("2. Decimales");
-        int opcionTipo = sc.nextInt();
+            if (opcion == 8) break;
 
-        switch (opcionTipo) {
+            System.out.println("Ingrese el tipo de dato: 1. Enteros | 2. Decimales");
+            int tipo = sc.nextInt();
 
-            case 1:
+            if (tipo == 1) {
                 System.out.println("Ingrese primer numero entero:");
                 int intNum1 = sc.nextInt();
-                System.out.println("Ingrese segundo numero entero:");
-                int intNum2 = sc.nextInt();
+                OperacionesMatInteger opInt = new OperacionesMatInteger(intNum1);
 
-                OperacionesMatInteger opEnteros = new OperacionesMatInteger(intNum1);
-
-                System.out.println("Suma: " + opEnteros.suma(intNum2));
-                System.out.println("Resta: " + opEnteros.resta(intNum2));
-                System.out.println("Producto: " + opEnteros.producto(intNum2));
-                try {
-                    System.out.println("Division: " + opEnteros.division(intNum2));
-                } catch (ArithmeticException e) {
-                    System.out.println(e.getMessage());
+                if(opcion >= 1 && opcion <= 4){
+                    System.out.println("Ingrese segundo numero entero:");
+                    int intNum2 = sc.nextInt();
+                    switch(opcion){
+                        case 1: System.out.println("Suma: " + opInt.suma(intNum2)); break;
+                        case 2: System.out.println("Resta: " + opInt.resta(intNum2)); break;
+                        case 3: System.out.println("Producto: " + opInt.producto(intNum2)); break;
+                        case 4: 
+                            try {
+                                System.out.println("División: " + opInt.division(intNum2));
+                            } catch (ArithmeticException e) {
+                                System.out.println(e.getMessage());
+                            }
+                            break;
+                    }
+                }else{
+                    switch(opcion){
+                        case 5: System.out.println("Potencia: " + (int)Math.pow(intNum1,2)); break;
+                        case 6: System.out.println("Raíz Cuadrada: " + Math.sqrt(intNum1)); break;
+                        case 7: System.out.println("Raíz Cúbica: " + Math.cbrt(intNum1)); break;
+                    }
                 }
-                break;
-
-            case 2:
+            } else if (tipo == 2) {
                 System.out.println("Ingrese primer numero decimal:");
                 double doubleNum1 = sc.nextDouble();
-                System.out.println("Ingrese segundo numero decimal:");
-                double doubleNum2 = sc.nextDouble();
+                OperacionesMatDouble opDouble = new OperacionesMatDouble(doubleNum1);
 
-                OperacionesMatDouble opDecimales = new OperacionesMatDouble(doubleNum1);
-
-                System.out.println("Suma: " + opDecimales.suma(doubleNum2));
-                System.out.println("Resta: " + opDecimales.resta(doubleNum2));
-                System.out.println("Producto: " + opDecimales.producto(doubleNum2));
-                if (doubleNum2 != 0) {
-                    System.out.println("Division: " + opDecimales.division(doubleNum2));
-                } else {
-                    System.out.println("No se puede dividir por cero.");
+                if(opcion >= 1 && opcion <= 4){
+                    System.out.println("Ingrese segundo numero decimal:");
+                    double doubleNum2 = sc.nextDouble();
+                    switch(opcion){
+                        case 1: System.out.println("Suma: " + opDouble.suma(doubleNum2)); break;
+                        case 2: System.out.println("Resta: " + opDouble.resta(doubleNum2)); break;
+                        case 3: System.out.println("Producto: " + opDouble.producto(doubleNum2)); break;
+                        case 4: 
+                            if(doubleNum2 != 0) 
+                                System.out.println("División: " + opDouble.division(doubleNum2));
+                            else
+                                System.out.println("No se puede dividir por cero.");
+                            break;
+                    }
+                }else{
+                    switch(opcion){
+                        case 5: System.out.println("Potencia: " + Math.pow(doubleNum1,2)); break;
+                        case 6: System.out.println("Raíz Cuadrada: " + Math.sqrt(doubleNum1)); break;
+                        case 7: System.out.println("Raíz Cúbica: " + Math.cbrt(doubleNum1)); break;
+                    }
                 }
-                break;
+            } else {
+                System.out.println("Tipo de dato inválido.");
+            }
 
-            default:
-                System.out.println("Tipo de operacion invalido.");
-        }
+        } while (true);
 
         sc.close();
     }
