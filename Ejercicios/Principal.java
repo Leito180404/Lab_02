@@ -7,7 +7,7 @@ public class Principal {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Seleccione el tipo de operación:");
+        System.out.println("Seleccione el tipo de operacion:");
         System.out.println("1. Enteros");
         System.out.println("2. Decimales");
         int opcionTipo = sc.nextInt();
@@ -15,9 +15,9 @@ public class Principal {
         switch (opcionTipo) {
 
             case 1:
-                System.out.println("Ingrese primer número entero:");
+                System.out.println("Ingrese primer numero entero:");
                 int intNum1 = sc.nextInt();
-                System.out.println("Ingrese segundo número entero:");
+                System.out.println("Ingrese segundo numero entero:");
                 int intNum2 = sc.nextInt();
 
                 OperacionesMatInteger opEnteros = new OperacionesMatInteger(intNum1);
@@ -26,16 +26,16 @@ public class Principal {
                 System.out.println("Resta: " + opEnteros.resta(intNum2));
                 System.out.println("Producto: " + opEnteros.producto(intNum2));
                 try {
-                    System.out.println("División: " + opEnteros.division(intNum2));
+                    System.out.println("Division: " + opEnteros.division(intNum2));
                 } catch (ArithmeticException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
 
             case 2:
-                System.out.println("Ingrese primer número decimal:");
+                System.out.println("Ingrese primer numero decimal:");
                 double doubleNum1 = sc.nextDouble();
-                System.out.println("Ingrese segundo número decimal:");
+                System.out.println("Ingrese segundo numero decimal:");
                 double doubleNum2 = sc.nextDouble();
 
                 OperacionesMatDouble opDecimales = new OperacionesMatDouble(doubleNum1);
@@ -44,14 +44,14 @@ public class Principal {
                 System.out.println("Resta: " + opDecimales.resta(doubleNum2));
                 System.out.println("Producto: " + opDecimales.producto(doubleNum2));
                 if (doubleNum2 != 0) {
-                    System.out.println("División: " + opDecimales.division(doubleNum2));
+                    System.out.println("Division: " + opDecimales.division(doubleNum2));
                 } else {
                     System.out.println("No se puede dividir por cero.");
                 }
                 break;
 
             default:
-                System.out.println("Tipo de operación inválido.");
+                System.out.println("Tipo de operacion invalido.");
         }
 
         sc.close();
