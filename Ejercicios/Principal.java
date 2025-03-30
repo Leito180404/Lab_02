@@ -9,20 +9,20 @@ public class Principal {
         int opcion;
         
         do {
-            System.out.println("Menú de Operaciones Clases Genéricas:");
+            System.out.println("Menú de Operaciones Clases Genericas:");
             System.out.println("1. Suma");
             System.out.println("2. Resta");
             System.out.println("3. Producto");
-            System.out.println("4. División");
+            System.out.println("4. Division");
             System.out.println("5. Potencia");
-            System.out.println("6. Raíz Cuadrada");
-            System.out.println("7. Raíz Cúbica");
+            System.out.println("6. Raiz Cuadrada");
+            System.out.println("7. Raiz Cubica");
             System.out.println("8. Salir");
             opcion = sc.nextInt();
 
             if (opcion == 8) break;
 
-            System.out.println("Ingrese el tipo de dato: 1. Enteros | 2. Decimales");
+            System.out.println("Ingrese el tipo de dato: 1. Enteros 2. Decimales");
             int tipo = sc.nextInt();
 
             if (tipo == 1) {
@@ -39,7 +39,7 @@ public class Principal {
                         case 3: System.out.println("Producto: " + opInt.producto(intNum2)); break;
                         case 4: 
                             try {
-                                System.out.println("División: " + opInt.division(intNum2));
+                                System.out.println("Division: " + opInt.division(intNum2));
                             } catch (ArithmeticException e) {
                                 System.out.println(e.getMessage());
                             }
@@ -48,8 +48,8 @@ public class Principal {
                 }else{
                     switch(opcion){
                         case 5: System.out.println("Potencia: " + (int)Math.pow(intNum1,2)); break;
-                        case 6: System.out.println("Raíz Cuadrada: " + Math.sqrt(intNum1)); break;
-                        case 7: System.out.println("Raíz Cúbica: " + Math.cbrt(intNum1)); break;
+                        case 6: System.out.println("Raiz Cuadrada: " + Math.sqrt(intNum1)); break;
+                        case 7: System.out.println("Raiz Cubica: " + Math.cbrt(intNum1)); break;
                     }
                 }
             } else if (tipo == 2) {
@@ -66,7 +66,7 @@ public class Principal {
                         case 3: System.out.println("Producto: " + opDouble.producto(doubleNum2)); break;
                         case 4: 
                             if(doubleNum2 != 0) 
-                                System.out.println("División: " + opDouble.division(doubleNum2));
+                                System.out.println("Division: " + opDouble.division(doubleNum2));
                             else
                                 System.out.println("No se puede dividir por cero.");
                             break;
@@ -74,12 +74,12 @@ public class Principal {
                 }else{
                     switch(opcion){
                         case 5: System.out.println("Potencia: " + Math.pow(doubleNum1,2)); break;
-                        case 6: System.out.println("Raíz Cuadrada: " + Math.sqrt(doubleNum1)); break;
-                        case 7: System.out.println("Raíz Cúbica: " + Math.cbrt(doubleNum1)); break;
+                        case 6: System.out.println("Raiz Cuadrada: " + Math.sqrt(doubleNum1)); break;
+                        case 7: System.out.println("Raiz Cubica: " + Math.cbrt(doubleNum1)); break;
                     }
                 }
             } else {
-                System.out.println("Tipo de dato inválido.");
+                System.out.println("Tipo de dato invalido.");
             }
 
         } while (true);
