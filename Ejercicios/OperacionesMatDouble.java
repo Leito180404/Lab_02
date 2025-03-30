@@ -27,7 +27,7 @@ public class OperacionesMatDouble<E extends Number> implements Operable<E> {
 
     @Override
     public E division(E otro) {
-        if (otro.doubleValue() == 0) {
+        if (otro.doubleValue() == 0.0) {
             throw new ArithmeticException("No se puede dividir por cero");
         }
         return type.cast(Double.valueOf(valor.doubleValue() / otro.doubleValue()));

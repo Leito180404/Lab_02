@@ -16,12 +16,12 @@ public class Principal {
 
             case 1:
                 System.out.println("Ingrese el primer numero entero:");
-                int numEntero1 = sc.nextInt();
+                Integer numEntero1 = sc.nextInt();
 
                 System.out.println("Ingrese el segundo numero entero:");
-                int numEntero2 = sc.nextInt();
+                Integer numEntero2 = sc.nextInt();
 
-                OperacionesMatInteger opEntero = new OperacionesMatInteger(numEntero1);
+                OperacionesMatInteger<Integer> opEntero = new OperacionesMatInteger<>(numEntero1, Integer.class);
 
                 System.out.println("Ingrese la operacion (1:suma, 2:resta, 3:producto, 4:division):");
                 int operacionEntero = sc.nextInt();
@@ -50,12 +50,12 @@ public class Principal {
 
             case 2:
                 System.out.println("Ingrese el primer numero decimal:");
-                double numDouble1 = sc.nextDouble();
+                Double numDouble1 = sc.nextDouble();
 
                 System.out.println("Ingrese el segundo numero decimal:");
-                double numDouble2 = sc.nextDouble();
+                Double numDouble2 = sc.nextDouble();
 
-                OperacionesMatDouble opDouble = new OperacionesMatDouble(numDouble1);
+                OperacionesMatDouble<Double> opDouble = new OperacionesMatDouble<>(numDouble1, Double.class);
 
                 System.out.println("Ingrese la operacion (1:suma, 2:resta, 3:producto, 4:division):");
                 int operacionDouble = sc.nextInt();

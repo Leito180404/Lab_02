@@ -33,17 +33,5 @@ public class OperacionesMatInteger<E extends Number> implements Operable<E> {
         }
         return type.cast(Integer.valueOf(valor.intValue() / otro.intValue()));
     }
-
-    public E getValor() {
-        return valor;
-    }
-
-    public void setValor(E valor) {
-        this.valor = valor;
-    }
-
-    @Override
-    public String toString() {
-        return "OperacionesMatInteger [valor=" + valor + "]";
-    }
 }
+
