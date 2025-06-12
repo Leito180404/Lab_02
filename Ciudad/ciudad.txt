@@ -1,0 +1,6 @@
+# Origen,Destino,Distancia
+A,B,5
+B,C,3
+A,C,10
+C,D,2
+
